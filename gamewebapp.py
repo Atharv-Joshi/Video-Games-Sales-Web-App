@@ -35,7 +35,7 @@ def dark_theme():
 	st.markdown("<style>h4{color : white;}</style>" , unsafe_allow_html = True)
 	st.markdown("<style>h5{color : white;}</style>" , unsafe_allow_html = True)
 	st.markdown("<style>h6{color : white;}</style>" , unsafe_allow_html = True)
-	with open("bgcolor.css") as f:
+	with open("C:\\Users\\dell\\Documents\\GitHub\\Video-Games-Sales-Web-App\\bgcolor.css") as f:
 		st.markdown(f"<style>{f.read()}</style>" , unsafe_allow_html = True)
 
 #function calling
@@ -61,7 +61,7 @@ st.markdown("---")
 ########################################################################################
 
 
-st.header("Top 10 Selling Games in the World")
+st.header("Top 10 Selling Games in the World : ")
 other_sales = data[["Name","Global_Sales"]].head(10)
 
 st.write(px.bar( other_sales,x = "Name" , y = "Global_Sales" , hover_data = ["Name" , "Global_Sales"] , color = "Global_Sales" ))
@@ -70,7 +70,7 @@ if st.checkbox("Show Raw Data",False):
 st.markdown("---")
 ########################################################################################
 
-st.header("Top Selling Games  in different parts of the world")
+st.header("Top Selling Games  in different parts of the world : ")
 check = st.selectbox("Select a option" , ["North America","Europe","Japan","Rest of the World"])
 
 if check == "North America":
@@ -103,7 +103,7 @@ if st.checkbox("Show Raw data",False):
 st.markdown("---")
 ########################################################################################
 
-st.subheader("Highest Grossing Genres")
+st.subheader("Highest Grossing Genres : ")
 other_sales = data[["Genre","Global_Sales"]].groupby("Genre").agg("sum").sort_values(by = "Global_Sales",ascending = False)
 other_sales["Genre"] = other_sales.index
 st.write(px.bar(other_sales, x = "Genre" , y = "Global_Sales" , hover_data = ["Genre" , "Global_Sales"] , color = "Global_Sales"))
@@ -114,7 +114,7 @@ st.markdown("---")
 
 ########################################################################################
 
-st.subheader("Highest Grossing Publishers")
+st.subheader("Highest Grossing Publishers : ")
 other_sales = data[["Publisher","Global_Sales"]].groupby("Publisher").agg("sum").sort_values(by = "Global_Sales",ascending = False).head(20)
 other_sales["Publisher"] = other_sales.index
 st.write(px.bar(other_sales, x = "Publisher" , y = "Global_Sales" , hover_data = ["Publisher" , "Global_Sales"] , color = "Global_Sales"))
@@ -124,6 +124,8 @@ if st.checkbox("Show raw Data",False):
 st.markdown("---")	
 
 ########################################################################################
+
+st.subheader("Highest Grossing Publisher/Genre/Game in a Particular Year : ")
 
 user_input_year = st.text_input("Enter a year between 1970 and 2016" , 2000)
 user_input_field = st.selectbox("Choose an Option" , ["Publisher" , "Genre" , "Name"])
@@ -146,5 +148,5 @@ except ValueError:
 
 
 
-
+st.markdown("---")
 
