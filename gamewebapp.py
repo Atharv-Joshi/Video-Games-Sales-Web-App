@@ -35,7 +35,7 @@ def dark_theme():
 	st.markdown("<style>h4{color : white;}</style>" , unsafe_allow_html = True)
 	st.markdown("<style>h5{color : white;}</style>" , unsafe_allow_html = True)
 	st.markdown("<style>h6{color : white;}</style>" , unsafe_allow_html = True)
-	with open("C:\\Users\\dell\\Documents\\GitHub\\Video-Games-Sales-Web-App\\bgcolor.css") as f:
+	with open("bgcolor.css") as f:
 		st.markdown(f"<style>{f.read()}</style>" , unsafe_allow_html = True)
 
 #function calling
