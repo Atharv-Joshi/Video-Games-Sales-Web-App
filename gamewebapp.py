@@ -7,7 +7,7 @@ import streamlit as st
 
 ########################################################################################
 
-data_loc = "C:\\Users\\dell\\Desktop\\Python\\GameSales Webpage\\vgsales.csv"
+data_loc = "C:\\Users\\dell\\Documents\\GitHub\\Video-Games-Sales-Web-App\\vgsales.csv"
 
 
 # This function loads the data and does some very basic data cleaning.
